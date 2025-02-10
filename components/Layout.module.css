@@ -1,0 +1,67 @@
+/* styles/Layout.module.css */
+
+.layoutWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #2d3a44;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* To ensure it stays on top */
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.mainContentWrapper {
+  display: flex;
+  flex-grow: 1;
+  margin-top: 60px; /* This creates space for the fixed header */
+}
+
+.sidebar {
+  width: 250px;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.footer {
+  background: #2d3a44;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mainContentWrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+}
