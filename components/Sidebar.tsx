@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "../app/globals.css"; // Import global styles
-
-const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
-  const pathname = usePathname(); // Get the current pathname
-
+interface SidebarProps {
+  isSidebarOpen: boolean;
+}
+const Sidebar = ({ isSidebarOpen }: SidebarProps) => {
+  const pathname = usePathname(); 
   const menuItems = [
     { title: "Home", href: "/" },
     { title: "Getting Started", href: "/learn/intro" },

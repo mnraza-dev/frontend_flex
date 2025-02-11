@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>React Docs Clone</title>
+        <title>Frontend Flex </title>
         <meta name="description" content="A clone of the React Docs with Next.js" />
       </head>
 
@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Main content and Sidebar */}
           <div className="content flex flex-col sm:flex-row flex-grow">
-            {/* Sidebar */}
+            {/* Sidebar - Pass the 'isSidebarOpen' state as a prop */}
             <Sidebar isSidebarOpen={isSidebarOpen} />
 
             {/* Main content */}
