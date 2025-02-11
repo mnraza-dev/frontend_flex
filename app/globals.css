@@ -162,7 +162,7 @@ body.dark .sidebar .link.active {
   display: flex;
   flex-grow: 1;
   padding: 0px 20px;
-  margin-left: 240px; 
+  margin-left: 240px;
 }
 
 .searchbar {
@@ -228,11 +228,6 @@ body.dark .modal-content {
   color: var(--foreground); /* Text color based on theme */
 }
 
-/* Dark mode close button */
-body.dark .modal-close {
-  color: var(--foreground); /* Light color for close button in dark theme */
-}
-
 .search_list {
   margin-left: -20px;
   border-radius: 4px;
@@ -270,7 +265,8 @@ body.dark .search_list a {
 }
 
 /* Mobile and tablet responsive styles */
-@media (max-width: 1024px) { /* Target devices with width 1024px or less (tablets) */
+@media (max-width: 1024px) {
+  /* Target devices with width 1024px or less (tablets) */
   .content {
     margin-left: 0; /* Remove left margin on smaller screens */
   }
@@ -316,9 +312,37 @@ header {
   header {
     padding: 8px 10px; /* Adjust padding for smaller screens */
   }
-
+  .modal-content {
+    margin: 1rem;
+  }
+  body.dark .modal-close {
+    color: white;
+    background: gray;
+    border-radius: 22px;
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0.2rem;
+    top: 0.5rem;
+  }
+  body.light .modal-close {
+    color: #000;
+    background: #f3f3f3;
+    border-radius: 22px;
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0.2rem;
+    top: 0.5rem;
+  }
   .grid_header {
-    display: flex!important;
+    display: flex !important;
     justify-content: space-between; /* Ensure logo and other items are spaced out */
     align-items: center;
     width: 100%; /* Ensure the grid takes full width */
@@ -337,7 +361,6 @@ header {
     padding: 6px; /* Reduce padding for small buttons */
   }
 }
-
 
 /* Default SearchBox styling for larger screens */
 .searchBox {
@@ -384,11 +407,11 @@ header {
 }
 
 .searchBox .search-icon {
-  display: none; 
+  display: none;
 }
 .searchBox .search-icon {
-  display: none; 
-  font-size: 24px; 
+  display: none;
+  font-size: 24px;
 }
 
 /* Sidebar styles */
@@ -403,7 +426,7 @@ header {
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar.open {
+.sidebar.block {
   left: 0; /* Show the sidebar */
 }
 
@@ -411,11 +434,11 @@ header {
   .sidebar {
     width: 100%; /* Sidebar takes up more screen on smaller devices */
   }
-  
-  .sidebar.open {
+
+  .sidebar.block {
     left: 0;
   }
-  
+
   .sidebar.hidden {
     left: -100%; /* Hide sidebar when closed */
   }

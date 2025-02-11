@@ -1,6 +1,5 @@
-import React from 'react';
-import "../app/globals.css"
-
+import React from "react";
+import "../app/globals.css";
 
 interface ModalProps {
   isOpen: boolean;
@@ -14,9 +13,11 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        {/* <button className="modal-close" onClick={onClose}>
-          &times;
-        </button> */}
+        <div className="block sm:hidden">
+          <button className="modal-close" onClick={onClose}>
+            &times;
+          </button>
+        </div>  
         {children}
       </div>
     </div>

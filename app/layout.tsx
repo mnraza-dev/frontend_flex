@@ -1,15 +1,12 @@
-"use client"; // Client component for dynamic state (useState, etc.)
-
+"use client"; 
 import { useState } from "react";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
-import "./globals.css"; // Import global styles
-
+import "./globals.css"; 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  // Toggle sidebar visibility
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };

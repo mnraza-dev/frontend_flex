@@ -57,7 +57,10 @@ const SearchBox = () => {
       {/* Trigger the modal on search icon click (visible only on mobile) */}
       <div className="relative flex items-center rounded-full w-full">
         {/* Search Icon Visible Only on Mobile Devices */}
-        <span className="absolute left-3 text-gray-500 lg:hidden cursor-pointer" onClick={handleClickSearch}>
+        <span
+          className="absolute left-3 text-gray-500 lg:hidden cursor-pointer"
+          onClick={handleClickSearch}
+        >
           <FaSearch />
         </span>
 
@@ -115,7 +118,9 @@ const SearchBox = () => {
             ))}
           </ul>
         ) : (
-          <p>No results found.</p>
+          <div className="flex items-center justify-center h-[60vh] w-full">
+            <p>No results found.</p>
+          </div>
         )}
       </Modal>
     </div>
