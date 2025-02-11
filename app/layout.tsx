@@ -1,6 +1,5 @@
-// app/layout.tsx
+
 import Header from "@/components/Header";
-import SearchBox from "../components/SearchBox";
 import Sidebar from "@/components/Sidebar";
 import "./globals.css"; // Import global styles
 import Footer from "@/components/Footer";
