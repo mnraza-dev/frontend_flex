@@ -1,24 +1,42 @@
 // app/layout.tsx
-import { ReactNode } from 'react';
-import Layout from '../components/Layout';
-import './globals.css';
+import Header from "@/components/Header";
+import SearchBox from "../components/SearchBox";
+import Sidebar from "@/components/Sidebar";
+import "./globals.css"; // Import global styles
+import Footer from "@/components/Footer";
 
-interface LayoutProps {
-  children: ReactNode;
-}
+export const metadata = {
+  title: "React Docs Clone",
+  description: "A clone of the React Docs with Next.js",
+};
 
-export default function RootLayout({ children }: LayoutProps) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Frontend Flex Docs</title>
-        {/* You can add other meta tags or external stylesheets here */}
-      </head>
-      <body>
-        <Layout>{children}</Layout>
-      </body>
-    </html>
+    <>
+      <html lang="en">
+        <body className="min-h-screen bg-gray-100">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100vh",
+            }}
+          >
+            {/* Header */}
+            <Header />
+            {/* Main content and Sidebar */}
+            <div className="content">
+              <Sidebar />
+              {/* Main content */}
+              <main style={{ flexGrow: 1, padding: "20px" }}>
+                {children}
+              </main>
+            </div>
+            {/* Footer */}
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </>
   );
 }

@@ -1,14 +1,11 @@
-// components/Layout.tsx
-
-import styles from './Layout.module.css'; // Import the CSS module
 import SearchBox from './SearchBox';
 import Sidebar from './Sidebar';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={styles.layoutWrapper}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       {/* Header */}
-      <header className={styles.header}>
+      <header style={{ background: '#282c34', padding: '10px', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h1>React Docs Clone</h1>
 
         {/* Search Box */}
@@ -16,16 +13,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </header>
 
       {/* Main content and Sidebar */}
-      <div className={styles.mainContentWrapper}>
+      <div style={{ display: 'flex', flexGrow: 1 }}>
         {/* Sidebar */}
-        <Sidebar className={styles.sidebar} />
+        <Sidebar />
 
         {/* Main content */}
-        <main className={styles.mainContent}>{children}</main>
+        <main style={{ flexGrow: 1, padding: '20px' }}>
+          {children}
+        </main>
       </div>
 
       {/* Footer */}
-      <footer className={styles.footer}>
+      <footer style={{ background: '#282c34', padding: '10px', color: '#fff' }}>
         <p>&copy; 2025 React Docs Clone</p>
       </footer>
     </div>

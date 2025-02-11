@@ -1,10 +1,11 @@
-"use client"
+"use client";
+
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'; // Use this instead of `useRouter`
-import styles from './Sidebar.module.css'; // Import the CSS module
+import { usePathname } from 'next/navigation'; // Use this instead of `useRouter`
+import '../app/globals.css'; // Make sure the global styles are imported
 
 const Sidebar = () => {
-  const pathname = useRouter(); // Get the current pathname from next/navigation
+  const pathname = usePathname(); // Get the current pathname using usePathname()
 
   const menuItems = [
     { title: 'Home', href: '/' },
@@ -14,18 +15,18 @@ const Sidebar = () => {
   ];
 
   return (
-    <nav className={styles.sidebar}>
-      <div className={styles.logoContainer}>
-        <h2 className={styles.logoText}>React Docs</h2>
+    <nav className="sidebar">
+      <div className="logoContainer">
+        <h2 className="logoText">React Docs</h2>
       </div>
 
-      <ul className={styles.menuList}>
+      <ul className="menuList">
         {menuItems.map((item) => (
-          <li key={item.href} className={styles.menuItem}>
+          <li key={item.href} className="menuItem">
             <Link href={item.href}>
               <span
-                className={`${styles.link} ${
-                  pathname === item.href ? styles.active : ''
+                className={`link ${
+                  pathname === item.href ? 'active' : ''
                 }`}
               >
                 {item.title}

@@ -1,23 +1,21 @@
-
-"use client"
-import { useState, useEffect, useRef } from 'react';
-import Modal from './Modal';
+"use client";
+import { useState, useEffect, useRef } from "react";
+import Modal from "./Modal";
+import "../app/globals.css"
 
 // Sample documentation data (for demo purposes)
 const documentation = [
-  { title: 'Getting Started', link: '/learn/intro' },
-  { title: 'Hooks', link: '/learn/hooks' },
-  { title: 'Context API', link: '/learn/context' },
-  { title: 'State Management', link: '/learn/state-management' },
-  { title: 'Component Basics', link: '/learn/component-basics' },
-  
+  { title: "Getting Started", link: "/learn/intro" },
+  { title: "Hooks", link: "/learn/hooks" },
+  { title: "Context API", link: "/learn/context" },
+  { title: "State Management", link: "/learn/state-management" },
+  { title: "Component Basics", link: "/learn/component-basics" },
 ];
 
 const SearchBox = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState<{ title: string; link: string }[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
 
   const modalSearchInputRef = useRef<HTMLInputElement>(null);
 
@@ -27,18 +25,17 @@ const SearchBox = () => {
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-   
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       filterResults(searchQuery);
     }
   };
 
   const handleClickSearch = () => {
-    setIsModalOpen(true); 
+    setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false); 
+    setIsModalOpen(false);
   };
 
   const filterResults = (query: string) => {
@@ -50,7 +47,6 @@ const SearchBox = () => {
 
   useEffect(() => {
     if (isModalOpen && modalSearchInputRef.current) {
-     
       modalSearchInputRef.current.focus();
     }
   }, [isModalOpen]);
@@ -65,14 +61,7 @@ const SearchBox = () => {
         onKeyDown={handleKeyDown} // Listen for Enter key press
         onClick={handleClickSearch} // Open the modal when clicked
         placeholder="Search documentation..."
-        style={{
-          padding: '8px 12px',
-          fontSize: '16px',
-          border: '1px solid #ccc',
-          borderRadius: '8px',
-          color: '#000',
-          width: '250px',
-        }}
+        className="searchbar"
       />
 
       {/* Modal for Search Results */}
@@ -88,21 +77,25 @@ const SearchBox = () => {
           onKeyDown={handleKeyDown}
           placeholder="Search documentation..."
           style={{
-            padding: '8px 12px',
-            fontSize: '16px',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
-            width: '100%',
-            marginBottom: '10px',
+            padding: "8px 12px",
+            fontSize: "16px",
+            outline: "none",
+            borderRadius: "24px",
+            backgroundColor: "rgb(235 236 240 /1",
+            width: "34rem",
+            marginBottom: "10px",
           }}
         />
 
         {/* Display Search Results */}
         {results.length > 0 ? (
-          <ul style={{ marginTop: '10px' }}>
+          <ul style={{ marginTop: "10px" }}>
             {results.map((result, index) => (
               <li key={index}>
-                <a href={result.link} style={{ textDecoration: 'none', color: '#007bff' }}>
+                <a
+                  href={result.link}
+                  style={{ textDecoration: "none", color: "#007bff" }}
+                >
                   {result.title}
                 </a>
               </li>
