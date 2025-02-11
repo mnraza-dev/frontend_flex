@@ -3,7 +3,7 @@ import Card from "@/components/Card";
 const Home = () => (
   <div className="px-2">
     <h1 className="text-[40px] font-bold py-3">Installation</h1>
-   <p className="text-[20px] leading-1 font-medium">React has been designed from the start for gradual adoption. You can use as
+   <div className="text-[20px] leading-1 font-medium">React has been designed from the start for gradual adoption. You can use as
     little or as much React as you need. Whether you want to get a taste of
     React, add some interactivity to an HTML page, or start a complex
     React-powered app, this section will help you get started.
@@ -21,7 +21,7 @@ const Home = () => (
       Digital literacy allows individuals to access and utilize technology
       efficiently. 
       
-    </p>
+    </div>
   </div>
 );
 
