@@ -54,20 +54,24 @@ const SearchBox = () => {
 
   return (
     <div>
-      {/* Trigger the modal on search bar click */}
+      {/* Trigger the modal on search icon click (visible only on mobile) */}
       <div className="relative flex items-center rounded-full w-full">
-        {/* Search Icon Inside the Input */}
-        <span className="absolute left-3 text-gray-500">
+        {/* Search Icon Visible Only on Mobile Devices */}
+        <span className="absolute left-3 text-gray-500 lg:hidden cursor-pointer" onClick={handleClickSearch}>
           <FaSearch />
         </span>
+
+        {/* Input field visible only on larger screens */}
         <input
           type="text"
-          onClick={handleClickSearch} // Open the modal when clicked
           placeholder="Search..."
-          className="searchbar"
+          className="searchbar hidden lg:block"
+          value={searchQuery}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
         />
-        {/* Keyboard Shortcuts Inside the Input */}
-        <span className="absolute right-3 flex items-center space-x-1">
+        {/* Keyboard Shortcuts Inside the Input (only for larger screens) */}
+        <span className="absolute right-3 flex items-center space-x-1 hidden lg:flex">
           <kbd className="w-5 h-5 border border-transparent bg-wash dark:bg-wash-dark text-gray-30 rounded-md text-xs inline-flex justify-center items-center">
             ⌘
           </kbd>
@@ -79,9 +83,9 @@ const SearchBox = () => {
           </kbd>
         </span>
       </div>
+
       {/* Modal for Search Results */}
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-
         {/* Search input inside the modal */}
         <div className="relative flex items-center rounded-full w-full">
           {/* Search Icon Inside the Input */}
@@ -105,7 +109,7 @@ const SearchBox = () => {
             {results.map((result, index) => (
               <li key={index} className="search_list">
                 <a href={result.link} target="_blank" rel="noopener noreferrer">
-                 <span className="text-gray-400 mr-2">#</span> {result.title}
+                  <span className="text-gray-400 mr-2">#</span> {result.title}
                 </a>
               </li>
             ))}

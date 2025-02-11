@@ -384,11 +384,9 @@ header {
 }
 
 .searchBox .search-icon {
-  display: none; /* Hidden by default on large screens */
+  display: none; 
 }
-
-/* Optional: Customize the icon size for mobile */
 .searchBox .search-icon {
-  display: none; /* By default, hide the icon */
-  font-size: 24px; /* Default size of the search icon */
+  display: none; 
+  font-size: 24px; 
 }

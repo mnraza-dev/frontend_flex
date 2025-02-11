@@ -14,7 +14,8 @@ const Header = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
   // Sync theme state with localStorage and system preference on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
       ? "dark"
       : "light";
 
@@ -50,19 +51,19 @@ const Header = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
 
   return (
     <header className={`header ${scrolling ? "scrolled" : ""}`}>
+      {/* Hamburger Button for Mobile */}
+      <button
+        className="sm:hidden p-4 text-2xl"
+        onClick={toggleSidebar}
+        aria-label="Toggle Sidebar"
+      >
+        <GiHamburgerMenu /> {/* Hamburger Icon */}
+      </button>
+
       <BrandLogo />
 
       <div className="grid_header">
         <SearchBox />
-
-        {/* Hamburger Button for Mobile */}
-        <button
-          className="sm:hidden p-4 text-2xl"
-          onClick={toggleSidebar}
-          aria-label="Toggle Sidebar"
-        >
-          <GiHamburgerMenu /> {/* Hamburger Icon */}
-        </button>
 
         {/* Theme toggle button */}
         <button onClick={toggleTheme} className="theme-toggle-button">

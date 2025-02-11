@@ -18,7 +18,7 @@ const Sidebar = () => {
     //   isSidebarOpen ? 'block' : 'hidden'
     // } sm:block`}
 
-    <nav>
+    <nav className={`sidebar transition-all duration-300 ease-in-out sm:block`}>
       <div className="logoContainer">
         <h2 className="logoText">React Docs</h2>
       </div>
