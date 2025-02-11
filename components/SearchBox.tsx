@@ -69,9 +69,8 @@ const SearchBox = () => {
           type="text"
           placeholder="Search..."
           className="searchbar hidden lg:block"
-          value={searchQuery}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
+          // value={searchQuery}
+       onClick={handleClickSearch}
         />
         {/* Keyboard Shortcuts Inside the Input (only for larger screens) */}
         <span className="absolute right-3 flex items-center space-x-1 hidden lg:flex">
