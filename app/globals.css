@@ -161,8 +161,8 @@ body.dark .sidebar .link.active {
 .content {
   display: flex;
   flex-grow: 1;
-  padding: 40px 20px;
-  margin-left: 240px; /* Adjust this margin as needed */
+  padding: 0px 20px;
+  margin-left: 240px; 
 }
 
 .searchbar {

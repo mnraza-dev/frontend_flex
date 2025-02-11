@@ -9,6 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        customCardBg: "rgb(52 58 70 / 1)",
+        tealColor: "rgb(43 110 98 / 1)",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

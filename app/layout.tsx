@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="content">
               <Sidebar />
               {/* Main content */}
-              <main style={{ flexGrow: 1, padding: "20px" }}>
+              <main style={{ flexGrow: 1, padding: "0 20px" }}>
                 {children}
               </main>
             </div>
