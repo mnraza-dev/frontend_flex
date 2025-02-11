@@ -260,3 +260,135 @@ body.dark .modal-close {
 body.dark .search_list a {
   color: #fff;
 }
+
+/* Default styling (for larger screens) */
+.content {
+  display: flex;
+  flex-grow: 1;
+  padding: 0 20px;
+  margin-left: 240px; /* Sidebar width for desktop */
+}
+
+/* Mobile and tablet responsive styles */
+@media (max-width: 1024px) { /* Target devices with width 1024px or less (tablets) */
+  .content {
+    margin-left: 0; /* Remove left margin on smaller screens */
+  }
+}
+/* Default header styling for larger screens (desktop) */
+header {
+  background: #282c34;
+  padding: 10px;
+  color: #fff;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 220px 1fr; /* Sidebar and content side by side */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s, top 0.3s;
+  padding-left: 1rem;
+  padding-right: 2rem;
+}
+
+/* Mobile and Tablet styles for screens smaller than 1024px */
+@media (max-width: 1024px) {
+  header {
+    grid-template-columns: 1fr; /* Stack header items vertically on smaller screens */
+    padding-left: 1rem; /* Adjust padding */
+    padding-right: 1rem; /* Adjust padding */
+  }
+
+  /* Update .grid_header for mobile */
+  .grid_header {
+    width: 100vw; /* Make header take full width of the viewport */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space items to the left and right */
+    align-items: center; /* Align items vertically in the center */
+    gap: 10px; /* Space out the items slightly */
+  }
+}
+
+/* Specific styles for mobile with 432x932 resolution */
+@media (max-width: 432px) {
+  header {
+    padding: 8px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .grid_header {
+    display: flex!important;
+    justify-content: space-between; /* Ensure logo and other items are spaced out */
+    align-items: center;
+    width: 100%; /* Ensure the grid takes full width */
+    gap: 8px; /* Slightly reduce the gap for smaller screen */
+  }
+
+  /* Logo styling */
+  .logoText {
+    font-size: 18px; /* Reduce font size for small screens */
+  }
+
+  /* SearchBox and theme toggle adjustments */
+  .searchBox,
+  .theme-toggle-button {
+    font-size: 14px; /* Adjust font size for small buttons/icons */
+    padding: 6px; /* Reduce padding for small buttons */
+  }
+}
+
+
+/* Default SearchBox styling for larger screens */
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: relative; /* Ensure positioning for the icon and input */
+}
+
+/* For mobile screens, hide the text input and only show the icon */
+@media (max-width: 1024px) {
+  .searchBox .search-input {
+    display: none; /* Hide the input field on mobile */
+  }
+
+  .searchBox .search-icon {
+    display: block; /* Show the search icon on mobile */
+    font-size: 24px; /* Adjust icon size */
+    cursor: pointer; /* Change the cursor to indicate clickability */
+  }
+
+  /* When the search box is focused, show the input field */
+  .searchBox:focus-within .search-input {
+    display: block; /* Show the input field when focused */
+    width: 200px; /* Adjust width as needed */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .searchBox:focus-within .search-icon {
+    display: none; /* Hide the search icon when input is focused */
+  }
+}
+
+/* Default styles for the search input and icon */
+.searchBox .search-input {
+  font-size: 16px;
+  padding: 5px;
+  width: 200px; /* Adjust width */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none; /* Hidden by default on mobile */
+}
+
+.searchBox .search-icon {
+  display: none; /* Hidden by default on large screens */
+}
+
+/* Optional: Customize the icon size for mobile */
+.searchBox .search-icon {
+  display: none; /* By default, hide the icon */
+  font-size: 24px; /* Default size of the search icon */
+}

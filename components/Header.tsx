@@ -1,20 +1,20 @@
-"use client";
+"use client"; // Client component for dynamic state (useState, etc.)
 
 import { useState, useEffect } from "react";
 import { FaSun, FaMoon } from "react-icons/fa"; // Importing icons for theme toggle
+import { GiHamburgerMenu } from "react-icons/gi"; // Import the hamburger icon
 import SearchBox from "./SearchBox";
 import "./Header.css"; // Import the CSS file
 import BrandLogo from "./BrandLogo";
 
-const Header = () => {
+const Header = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [scrolling, setScrolling] = useState(false);
 
   // Sync theme state with localStorage and system preference on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
 
@@ -49,11 +49,20 @@ const Header = () => {
   };
 
   return (
-    <header className={` header  ${scrolling ? "scrolled" : ""}`}>
-     <BrandLogo/>
+    <header className={`header ${scrolling ? "scrolled" : ""}`}>
+      <BrandLogo />
 
       <div className="grid_header">
         <SearchBox />
+
+        {/* Hamburger Button for Mobile */}
+        <button
+          className="sm:hidden p-4 text-2xl"
+          onClick={toggleSidebar}
+          aria-label="Toggle Sidebar"
+        >
+          <GiHamburgerMenu /> {/* Hamburger Icon */}
+        </button>
 
         {/* Theme toggle button */}
         <button onClick={toggleTheme} className="theme-toggle-button">
