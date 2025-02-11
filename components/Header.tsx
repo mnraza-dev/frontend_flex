@@ -46,7 +46,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`header ${scrolling ? 'scrolled' : ''}`}>
+    <header className={` header  ${scrolling ? 'scrolled' : ''}`}>
       <h1>React Docs Clone</h1>
 <div className="grid_header">      <SearchBox />
       

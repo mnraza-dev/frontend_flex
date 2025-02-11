@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Modal from "./Modal";
-import "../app/globals.css"
+import "../app/globals.css";
+import { FaSearch } from "react-icons/fa";
 
 // Sample documentation data (for demo purposes)
 const documentation = [
@@ -54,48 +55,56 @@ const SearchBox = () => {
   return (
     <div>
       {/* Trigger the modal on search bar click */}
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown} // Listen for Enter key press
-        onClick={handleClickSearch} // Open the modal when clicked
-        placeholder="Search documentation..."
-        className="searchbar"
-      />
-
+      <div className="relative flex items-center rounded-full w-full">
+        {/* Search Icon Inside the Input */}
+        <span className="absolute left-3 text-gray-500">
+          <FaSearch />
+        </span>
+        <input
+          type="text"
+          onClick={handleClickSearch} // Open the modal when clicked
+          placeholder="Search..."
+          className="searchbar"
+        />
+        {/* Keyboard Shortcuts Inside the Input */}
+        <span className="absolute right-3 flex items-center space-x-1">
+          <kbd className="w-5 h-5 border border-transparent bg-wash dark:bg-wash-dark text-gray-30 rounded-md text-xs inline-flex justify-center items-center">
+            ⌘
+          </kbd>
+          <kbd className="w-10 h-5 border border-transparent bg-wash dark:bg-wash-dark text-gray-30 rounded-md text-xs inline-flex justify-center items-center">
+            Ctrl
+          </kbd>
+          <kbd className="w-5 h-5 border border-transparent bg-wash dark:bg-wash-dark text-gray-30 rounded-md text-xs inline-flex justify-center items-center">
+            K
+          </kbd>
+        </span>
+      </div>
       {/* Modal for Search Results */}
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <h3>Search Results</h3>
 
         {/* Search input inside the modal */}
-        <input
-          ref={modalSearchInputRef} // Set the ref here to focus the input
-          type="text"
-          value={searchQuery}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          placeholder="Search documentation..."
-          style={{
-            padding: "8px 12px",
-            fontSize: "16px",
-            outline: "none",
-            borderRadius: "24px",
-            backgroundColor: "rgb(235 236 240 /1",
-            width: "34rem",
-            marginBottom: "10px",
-          }}
-        />
+        <div className="relative flex items-center rounded-full w-full">
+          {/* Search Icon Inside the Input */}
+          <span className="absolute left-3 text-gray-500">
+            <FaSearch />
+          </span>
+          <input
+            ref={modalSearchInputRef} // Set the ref here to focus the input
+            type="text"
+            value={searchQuery}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            placeholder="Search documentation..."
+            className="searchbar"
+          />
+        </div>
 
         {/* Display Search Results */}
         {results.length > 0 ? (
           <ul style={{ marginTop: "10px" }}>
             {results.map((result, index) => (
-              <li key={index}>
-                <a
-                  href={result.link}
-                  style={{ textDecoration: "none", color: "#007bff" }}
-                >
+              <li key={index} className="search_list">
+                <a href={result.link} target="_blank" rel="noopener noreferrer">
                   {result.title}
                 </a>
               </li>
