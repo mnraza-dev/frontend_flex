@@ -1,0 +1,80 @@
+/* BrandLogo.css */
+
+/* General logo styling */
+.brand-logo {
+    font-size: 1.4rem; /* 36px equivalent */
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    display: flex;
+  }
+  body.dark .brand-logo {
+  
+        font-size: 1.4rem; /* 36px equivalent */
+        font-weight: bold;
+        text-transform: capitalize;
+        letter-spacing: 0.1em;
+        position: relative;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        display: flex;
+      
+  }
+  
+  /* Typewriter animation with smoother effect */
+  @keyframes typewriter {
+    0% {
+      width: 0;
+    }
+    30%{
+        width: 50%;
+    }
+    60% {
+      width: 60%;
+    }
+  }
+  
+  /* Apply typewriter animation with infinite loop */
+  .animate-typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    width: 0;
+    animation: typewriter 20s linear infinite; /* Smooth animation with linear easing */
+    animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1); /* Easing for smoother effect */
+    border-right: 4px solid white; /* Add cursor effect */
+  }
+
+  body.dark .animate-typewriter{
+    border-right: 4px solid transparent; /* Change cursor effect color for dark mode */
+  }
+  
+  /* Adjust delays for each word */
+  .animate-typewriter:nth-child(1) {
+    animation-delay: 0s; /* No delay for "Frontend" */
+  }
+  
+  .animate-typewriter:nth-child(2) {
+    animation-delay: 1s; /* Delay for "Flex" text */
+  }
+  
+  /* Gradient text styling for Frontend */
+  .text-frontend {
+    background: linear-gradient(to right, #61dafb, #3b82f6); /* Gradient colors for Frontend */
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: lighter;
+  }
+  
+  /* Gradient text styling for Flex */
+  .text-flex {
+    background: linear-gradient(to right, #0ea5e9, #3b82f6); /* Gradient colors for Flex */
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: bold;
+  }
+  

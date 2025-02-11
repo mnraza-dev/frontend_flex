@@ -105,7 +105,7 @@ const SearchBox = () => {
             {results.map((result, index) => (
               <li key={index} className="search_list">
                 <a href={result.link} target="_blank" rel="noopener noreferrer">
-                  {result.title}
+                 <span className="text-gray-400 mr-2">#</span> {result.title}
                 </a>
               </li>
             ))}

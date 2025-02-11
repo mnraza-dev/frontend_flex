@@ -12,7 +12,7 @@
   right: 0;
   z-index: 1000; /* Ensure the header stays above other content */
   transition: box-shadow 0.3s ease, top 0.3s ease;
-  padding-left: 2rem;
+  padding-left: 1rem;
   padding-right: 2rem;
 }
 

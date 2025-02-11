@@ -237,7 +237,6 @@ body.dark .modal-close {
   margin-left: -20px;
   border-radius: 4px;
   cursor: pointer;
-  /* background-color: #149eca; */
   display: flex;
   align-items: center;
   padding-bottom: 4px;
@@ -253,8 +252,11 @@ body.dark .modal-close {
 
 .search_list:hover {
   background-color: #149eca;
-
+  color: #fff;
 }
-.search_list a {
+.search_list:hover a {
+  color: #fff;
+}
+body.dark .search_list a {
   color: #fff;
 }
