@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { FaSun, FaMoon } from "react-icons/fa"; // Importing icons for theme toggle
 import { GiHamburgerMenu } from "react-icons/gi"; // Import the hamburger icon
 import SearchBox from "./SearchBox";
-import "./Header.css"; // Import the CSS file
+import "./Header.css"; 
 import BrandLogo from "./BrandLogo";
 
 const Header = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
