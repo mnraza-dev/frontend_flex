@@ -1,4 +1,3 @@
-// pages/learn/context.tsx
 const Context = () => {
     return (
       <div>

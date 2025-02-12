@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000; /* To ensure it stays on top */
+  z-index: 1000; 
 }
 
 .header h1 {
@@ -24,7 +24,7 @@
 .mainContentWrapper {
   display: flex;
   flex-grow: 1;
-  margin-top: 60px; /* This creates space for the fixed header */
+  margin-top: 60px; 
 }
 
 .sidebar {

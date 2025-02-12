@@ -1,4 +1,4 @@
-// pages/learn/intro.tsx
+
 const Intro = () => {
     return (
       <div>

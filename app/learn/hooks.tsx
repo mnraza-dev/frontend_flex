@@ -1,4 +1,3 @@
-// pages/learn/hooks.tsx
 const Hooks = () => {
     return (
       <div>
