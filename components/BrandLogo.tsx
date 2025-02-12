@@ -1,5 +1,5 @@
 import React from 'react';
-import './BrandLogo.css'; // Import CSS for animations
+import './BrandLogo.css'; 
 import Link from 'next/link';
 
 const BrandLogo = () => {
